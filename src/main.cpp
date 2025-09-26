@@ -2,35 +2,43 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 2: variables and basic data types in C++
+// Chapter 3: working with strings
 
 #include <iostream>
 
 using namespace std;
 
 int main() {
-    // Basic data types: string, char, int, float, boolean, double
-    string name;
-    name = "Pepito Perez";
+    string phrase = "FreeCodeCamp Course";
+    cout << "Phrase: " << phrase << endl;
     
-    char genre;
-    genre = 'M';
+    // Copy phrase
+    string copyPhrase = phrase;
     
-    int age;
-    age = 25;
+    // Update char in original phrase
+    phrase[0] = 'T';
+    cout << "Phrase updated: " << phrase << endl;
     
-    float height;
-    height = 1.72;
+    // Get length original phrase
+    long lengthPhO = phrase.length();
+    cout << "Length: " << lengthPhO << endl;
     
-    double altitud;
-    altitud = 2000.45;
+    // Find word in copy phrase
+    cout << "Copy phrase: " << copyPhrase << endl;
+    string word = "Course";
+    long startWordIndex = copyPhrase.find(word);
+    cout << "Word start index: " << startWordIndex << endl;
     
-    bool dev;
-    dev = true;
+    // Replace word in copy phrase
+    long lengthWord = word.length();
+    copyPhrase.replace(startWordIndex, lengthWord, "");
+    cout << "Phrase with word replaced: " << copyPhrase << endl;
     
-    cout << "Name: " << name << " - Dev: " << dev << " - Age: " << age << " years old." << endl;
-    cout << "Height: " << height << endl;
-    cout << "Altitud: " << altitud << endl;
+    // Substring of copy phrase
+    string subStringPhrase = copyPhrase.substr(0, 4);
+    cout << "New Substring: " << subStringPhrase;
+    
+    cout << "\n\n";
     
     return EXIT_SUCCESS;
 }
