@@ -2,7 +2,7 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 3: Working with string
 
 #include <iostream>
 
@@ -13,33 +13,32 @@ int main() {
     cout << "Phrase: " << phrase << endl;
     
     // Copy phrase
-    string copyPhrase = phrase;
+    string phraseCopy = phrase;
     
     // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
+    phrase[4] = 'W';
+    cout << "Phrase updated: " << phrase;
     
     // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
+    long lengthOP = phrase.length();
+    cout << "\nLength phrase: " << lengthOP;
     
     // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
+    cout << "\nCopy Phrase: " << phraseCopy << endl;
     string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
+    long startWordIndex = phraseCopy.find(word);
+    cout << "Word Start Index: " << startWordIndex << endl;
     
     // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
+    long lengthWordFound = word.length();
+    phraseCopy.replace(startWordIndex, lengthWordFound, "");
+    cout << "\nPhrase with new word: " << phraseCopy << endl;
     
     // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
+    string subStrPhraseC = phraseCopy.substr(4, 4);
+    cout << "\nSubstring: " << subStrPhraseC;
     
     cout << "\n\n";
-    
     return EXIT_SUCCESS;
 }
 
