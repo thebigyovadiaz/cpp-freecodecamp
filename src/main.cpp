@@ -2,41 +2,62 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 5: working with input and output - build a basic calculator
 
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 int main() {
-    string phrase = "FreeCodeCamp Course";
-    cout << "Phrase: " << phrase << endl;
+    int num1, num2, operation;
+    double result = 0;
     
-    // Copy phrase
-    string copyPhrase = phrase;
+    cout << "Digit a number: ";
+    cin >> num1;
     
-    // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
+    if (num1 <= 0) {
+        cout << "\nNumber invalid." << endl;
+        return EXIT_FAILURE;
+    }
     
-    // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
+    cout << "Digit another number: ";
+    cin >> num2;
     
-    // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
-    string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
+    if (num2 <= 0) {
+        cout << "\nNumber invalid." << endl;
+        return EXIT_FAILURE;
+    }
     
-    // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
+    cout << "Select operation \n\t1 to sum \n\t2 to subs \n\t3 to div \n\t4 to multi \n\t5 to pow: ";
+    cin >> operation;
     
-    // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
+    switch (operation) {
+        case 1:
+            result = num1 + num2;
+            break;
+            
+        case 2:
+            result = num1 - num2;
+            break;
+            
+        case 3:
+            result = num1 / num2;
+            break;
+            
+        case 4:
+            result = num1 * num2;
+            break;
+            
+        case 5:
+            result = pow(num1, num2);
+            break;
+            
+        default:
+            break;
+    }
+    
+    cout << "\nResult: " << result;
     
     cout << "\n\n";
     
