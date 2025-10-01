@@ -2,41 +2,38 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 4: working with numbers
 
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 int main() {
-    string phrase = "FreeCodeCamp Course";
-    cout << "Phrase: " << phrase << endl;
+    double subs, mult, div;
+    int sum, divInt;
     
-    // Copy phrase
-    string copyPhrase = phrase;
+    sum = 5 + 4;
+    subs = 3.45 - 2.1;
+    mult = 3 * 4.67;
     
-    // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
+    cout << "Sum: " << sum << " - Subs: " << subs << " - Mult: " << mult << endl;
     
-    // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
+    div = 10 / 3.0;
+    divInt = 10 / 3.0;
     
-    // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
-    string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
+    cout << "Div integer: " << divInt << " - Div double int: " << div;
     
-    // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
+    cout << "\n__________________________________________________" << endl;
     
-    // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
+    // Using math library
+    cout << "\nRound: " << round(3.6);
+    cout << "\nCeil: " << ceil(3.6);
+    cout << "\nFloor: " << floor(3.6);
+    cout << "\nMax: " << fmax(3.1, 4);
+    cout << "\nMin: " << fmin(3.6, 3.59);
+    cout << "\nSquare: " << sqrt(25);
+    cout << "\nPow: " << pow(2, 4);
     
     cout << "\n\n";
     
