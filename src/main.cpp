@@ -2,43 +2,22 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 6: working with arrays
 
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    string phrase = "FreeCodeCamp Course";
-    cout << "Phrase: " << phrase << endl;
+    // Initialize an array and set default values
+    int luckyNums [] = {1,2,3,4,5,6};
     
-    // Copy phrase
-    string copyPhrase = phrase;
+    // Get second value
+    std::cout << luckyNums[1];
     
-    // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
+    // Set new value
+    luckyNums[1] = 200;
+    std::cout << "\nNew value: " << luckyNums[1];
     
-    // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
-    
-    // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
-    string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
-    
-    // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
-    
-    // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
-    
-    cout << "\n\n";
+    std::cout << "\n\n";
     
     return EXIT_SUCCESS;
 }
