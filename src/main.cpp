@@ -2,44 +2,60 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 7: working with functions
 
 #include <iostream>
 
 using namespace std;
 
+// Void function because It don't use return statement
+void sayHello() {
+    cout << "Hello, Guy!" << endl;
+}
+
+// Function with return statement
+string greetingPeople(string name) {
+    string message;
+    message = "\nWelcome aboard " + name + ".";
+    return message;
+}
+
+// Signature functions
+void printYourName(string name);
+int cubeNumber(int numb);
+
 int main() {
-    string phrase = "FreeCodeCamp Course";
-    cout << "Phrase: " << phrase << endl;
+    sayHello();
     
-    // Copy phrase
-    string copyPhrase = phrase;
+    string name;
+    int age;
     
-    // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
+    cout << "\nWhat's your name?: " << endl;
+    getline(cin, name);
+    //cin >> name;
     
-    // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
+    cout << "\nWhat's your age?: " << endl;
+    cin >> age;
     
-    // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
-    string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
+    string greeting;
+    greeting = greetingPeople(name);
+    cout << greeting;
     
-    // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
+    printYourName(name);
     
-    // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
+    int cubeResult = cubeNumber(age);
+    cout << "\nYour cube age is: " << cubeResult;
+    
     
     cout << "\n\n";
     
     return EXIT_SUCCESS;
 }
 
+void printYourName(string name) {
+    cout << "\nYour name is: " << name;
+}
+
+int cubeNumber(int numb) {
+    return numb * numb * numb;
+}
