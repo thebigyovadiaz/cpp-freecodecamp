@@ -25,6 +25,7 @@ string getTemp(char gender) {
 }
 
 string useIfStatement(int age) {
+    // Operators: <, <=, >, >=, !=, &&, ||
     if (age >= 16 && age <= 18) {
         return "\nYou can watch adult films!";
     } else if (age >= 14) {
