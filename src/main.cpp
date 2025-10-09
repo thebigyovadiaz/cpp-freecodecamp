@@ -2,43 +2,62 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 9: working with while loops
 
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    string phrase = "FreeCodeCamp Course";
-    cout << "Phrase: " << phrase << endl;
+    // While Statement
+    std::cout << "While Statement";
     
-    // Copy phrase
-    string copyPhrase = phrase;
+    int index = 1;
+    int result = 1;
     
-    // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
+    while(index <= 10) {
+        std::cout << "Executing index -> " << index << std::endl;
+        result *= index;
+        index++;
+    }
     
-    // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
+    std::cout << "Result product index: " << result;
+    std::cout << "\n\n";
     
-    // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
-    string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
+    std::cout << "------------------------------------------------------------------------" << std::endl;
+
+    // Do While Statement
+    std::cout << "\nDo While Statement";
     
-    // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
+    int menu = 0;
+    std::string selected;
+    do {
+        std::cout << "Select an option [1=pizza | 2=soup | 3=beef | 4=ramen]: ";
+        std::cin >> menu;
+        
+        switch (menu) {
+            case 1:
+                std::cout << "You've selected pizza\n" << std::endl;
+                break;
+                
+            case 2:
+                std::cout << "You've selected soup\n" << std::endl;
+                break;
+                
+            case 3:
+                std::cout << "You've selected beef\n" << std::endl;
+                break;
+                
+            case 4:
+                std::cout << "You've selected ramen\n" << std::endl;
+                break;
+                
+            default:
+                std::cout << "Invalid option.";
+                menu = 0;
+                break;
+        }
+    } while (menu > 0);
     
-    // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
-    
-    cout << "\n\n";
+    std::cout << "\n\n";
     
     return EXIT_SUCCESS;
 }
