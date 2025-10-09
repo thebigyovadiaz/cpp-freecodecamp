@@ -2,41 +2,69 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 8: working with if-else and switch
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
+string getMessageAge(int age) {
+    return "\nYou're " + to_string(age) + " years old.";
+}
+
+string getTemp(char gender) {
+    switch (gender) {
+        case 'M':
+            return "\nYou're a male.";
+        case 'F':
+            return "\nYou're a female.";
+        default:
+            return "\nYou aren't know.";
+    }
+}
+
+string useIfStatement(int age) {
+    if (age >= 16) {
+        return "\nYou can watch adult films!";
+    } else if (age >= 14) {
+        return "\nYou are so near!";
+    } else if (age < 12) {
+        return "\nYour a younger child!";
+    } else {
+        return "\nYou are an adult!";
+    }
+}
+
+string getGreatingResult(string name, int age, char gender) {
+    string message = "\nWelcome aboard " + name;
+    string strGender = getTemp(gender);
+    string strMessageAge = getMessageAge(age);
+    string strMessageAllow = useIfStatement(age);
+    
+    message += strMessageAge;
+    message += strGender;
+    message += strMessageAllow;
+    
+    return message;
+}
+
 int main() {
-    string phrase = "FreeCodeCamp Course";
-    cout << "Phrase: " << phrase << endl;
+    string name, result;
+    char gender;
+    int age;
     
-    // Copy phrase
-    string copyPhrase = phrase;
+    cout << "What's your name?: " << endl;
+    getline(cin, name);
     
-    // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
+    cout << "What's your age?: " << endl;
+    cin >> age;
     
-    // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
+    cout << "What's your gender? (M=male | F=female): " << endl;
+    cin >> gender;
     
-    // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
-    string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
-    
-    // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
-    
-    // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
+    result = getGreatingResult(name, age, gender);
+    cout << result;
     
     cout << "\n\n";
     
