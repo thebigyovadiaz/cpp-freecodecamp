@@ -14,14 +14,21 @@ string getMessageAge(int age) {
 }
 
 string getTemp(char gender) {
+    string result = "";
+    
     switch (gender) {
         case 'M':
-            return "\nYou're a male.";
+            result = "\nYou're a male.";
+            break;
         case 'F':
-            return "\nYou're a female.";
+            result = "\nYou're a female.";
+            break;
         default:
-            return "\nYou aren't know.";
+            result = "\nYou aren't know gender.";
+            break;
     }
+    
+    return result;
 }
 
 string useIfStatement(int age) {
