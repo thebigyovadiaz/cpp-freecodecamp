@@ -2,43 +2,30 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 13: working with pointers
 
 #include <iostream>
 
 using namespace std;
 
 int main() {
-    string phrase = "FreeCodeCamp Course";
-    cout << "Phrase: " << phrase << endl;
+    int age = 23;
+    string name = "Michael Jordan";
+    double gpa = 2.9;
     
-    // Copy phrase
-    string copyPhrase = phrase;
+    // Get space pointer variables
+    cout << "Age Pointer: " << &age << endl;
+    cout << "Name Pointer: " << &name << endl;
+    cout << "Gpa Pointer: " << &gpa << endl;
     
-    // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
+    // Create pointer variables
+    int *pAge = &age;
+    // Get pointer variable
+    cout << "\npAge pointer: " << pAge << endl;
+    // Get pointer value
+    cout << "pAge pointer value: " << *pAge;
     
-    // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
-    
-    // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
-    string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
-    
-    // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
-    
-    // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
-    
-    cout << "\n\n";
+    cout << endl;
     
     return EXIT_SUCCESS;
 }
