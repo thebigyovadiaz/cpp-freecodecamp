@@ -2,43 +2,26 @@
 // main.cpp
 // FreeCodeCamp-Course
 //
-// Chapter 3: working with strings
+// Chapter 12: working with nested loops and 2D array
 
 #include <iostream>
 
-using namespace std;
 
 int main() {
-    string phrase = "FreeCodeCamp Course";
-    cout << "Phrase: " << phrase << endl;
+    int numbGrid [3][3] = {{1,2,3}, {4,5,6}, {7,8,9}};
+    // Get length array
+    int lengthNumbGrid = sizeof(numbGrid) / sizeof(numbGrid[0]);
     
-    // Copy phrase
-    string copyPhrase = phrase;
+    for(int i = 0; i < lengthNumbGrid; i++) {
+        // Get length internal array
+        int lengthArrI = sizeof(numbGrid[1]) / sizeof(numbGrid[i][0]);
+        for(int j = 0; j < lengthArrI; j++) {
+            std::cout << "Item: " << i << " - Value: " << numbGrid[i][j] << std::endl;
+        }
+        std::cout << std::endl;
+    }
     
-    // Update char in original phrase
-    phrase[0] = 'T';
-    cout << "Phrase updated: " << phrase << endl;
-    
-    // Get length original phrase
-    long lengthPhO = phrase.length();
-    cout << "Length: " << lengthPhO << endl;
-    
-    // Find word in copy phrase
-    cout << "Copy phrase: " << copyPhrase << endl;
-    string word = "Course";
-    long startWordIndex = copyPhrase.find(word);
-    cout << "Word start index: " << startWordIndex << endl;
-    
-    // Replace word in copy phrase
-    long lengthWord = word.length();
-    copyPhrase.replace(startWordIndex, lengthWord, "");
-    cout << "Phrase with word replaced: " << copyPhrase << endl;
-    
-    // Substring of copy phrase
-    string subStringPhrase = copyPhrase.substr(0, 4);
-    cout << "New Substring: " << subStringPhrase;
-    
-    cout << "\n\n";
+    std::cout << std::endl;
     
     return EXIT_SUCCESS;
 }
